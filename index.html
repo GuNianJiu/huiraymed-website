@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深圳前海汇睿生物技术有限公司 - HuiRayMed</title>
+    <meta name="description" content="深圳前海汇睿生物技术有限公司，专注于医疗器械领域，点亮视界，触手可及。">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#1a1a2e;background:#f8f9fa;line-height:1.6}
+        a{text-decoration:none;color:inherit}
+        img{max-width:100%;display:block}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06)}
+        .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+        .logo{font-size:22px;font-weight:700;color:#0a4b78}
+        .nav-links{display:flex;gap:32px;list-style:none}
+        .nav-links a{font-size:15px;font-weight:500;color:#333;transition:color .2s}
+        .nav-links a:hover{color:#0a4b78}
+        .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+        .hamburger span{display:block;width:26px;height:3px;background:#333;border-radius:2px;transition:.3s}
+        .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#0a4b78 0%,#1a7bb5 40%,#3fa3d8 100%);color:#fff;padding:120px 24px 80px}
+        .hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;line-height:1.2;margin-bottom:20px}
+        .hero .slogan{font-size:clamp(1.1rem,2.5vw,1.6rem);font-weight:300;opacity:.9;margin-bottom:40px}
+        .hero .subtitle{font-size:1rem;opacity:.75;max-width:600px;margin:0 auto 48px;line-height:1.8}
+        .hero .btn-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+        .btn{display:inline-block;padding:14px 40px;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer;transition:.25s;border:none}
+        .btn-primary{background:#fff;color:#0a4b78}
+        .btn-primary:hover{background:#e8f4fd;transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+        .btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+        .btn-outline:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px)}
+        section{padding:100px 0}
+        .section-title{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;text-align:center;margin-bottom:16px;color:#0a4b78}
+        .section-subtitle{text-align:center;color:#666;margin-bottom:60px;font-size:1.05rem}
+        .section-alt{background:#fff}
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .about-text p{margin-bottom:20px;color:#444;font-size:1.05rem}
+        .about-image{background:linear-gradient(135deg,#e8f4fd,#d0eaff);border-radius:16px;padding:40px;min-height:300px;display:flex;align-items:center;justify-content:center;font-size:4rem}
+        .about-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+        .about-highlights .item{text-align:center;padding:20px;background:#f0f7ff;border-radius:12px}
+        .about-highlights .item .num{font-size:2rem;font-weight:800;color:#0a4b78}
+        .about-highlights .item .label{font-size:.9rem;color:#666;margin-top:6px}
+        .products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+        .product-card{background:#fff;border-radius:16px;padding:36px 28px;box-shadow:0 4px 20px rgba(0,0,0,.06);transition:transform .3s,box-shadow .3s;border:1px solid rgba(0,0,0,.04)}
+        .product-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.1)}
+        .product-card .icon{font-size:2.4rem;margin-bottom:16px}
+        .product-card h3{font-size:1.2rem;margin-bottom:12px;color:#0a4b78}
+        .product-card p{font-size:.95rem;color:#555;line-height:1.7}
+        .why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px}
+        .why-card{background:#fff;border-radius:16px;padding:36px 24px;text-align:center;box-shadow:0 4px 20px rgba(0,0,0,.05);border:1px solid rgba(0,0,0,.04)}
+        .why-card .emoji{font-size:2.8rem;margin-bottom:16px}
+        .why-card h4{font-size:1.1rem;margin-bottom:10px;color:#0a4b78}
+        .why-card p{font-size:.92rem;color:#666}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+        .contact-info h3{font-size:1.3rem;margin-bottom:24px;color:#0a4b78}
+        .contact-info .item{display:flex;gap:16px;margin-bottom:20px;align-items:flex-start}
+        .contact-info .item .label{font-size:.85rem;color:#888;margin-bottom:2px}
+        .contact-info .item .value{font-size:1rem;color:#333}
+        .contact-info .item .icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
+        .contact-map{background:#e8f4fd;border-radius:16px;min-height:300px;display:flex;align-items:center;justify-content:center;font-size:.95rem;color:#555;padding:20px;text-align:center;line-height:1.8}
+        footer{background:#0a4b78;color:rgba(255,255,255,.8);padding:48px 0 32px;text-align:center}
+        footer .brand{font-size:1.4rem;font-weight:700;margin-bottom:8px}
+        footer .copy{font-size:.85rem;opacity:.6;margin-top:24px}
+        @media(max-width:768px){.nav-links{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#fff;padding:16px 24px;border-bottom:1px solid #eee;gap:16px}.nav-links.open{display:flex}.hamburger{display:flex}.about-grid,.contact-grid{grid-template-columns:1fr}.about-highlights{grid-template-columns:1fr}.hero .btn-group{flex-direction:column;align-items:center}.btn{width:100%;max-width:280px;text-align:center}}
+    </style>
+</head>
+<body>
+<header>
+    <nav class="nav container">
+        <div class="logo">汇睿生物</div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about">关于我们</a></li>
+            <li><a href="#products">产品中心</a></li>
+            <li><a href="#why">为什么选择我们</a></li>
+            <li><a href="#contact">联系我们</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="菜单">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div>
+        <h1>深圳前海汇睿生物技术有限公司</h1>
+        <p class="slogan">🌟 点亮视界 触手可及</p>
+        <p class="subtitle">专注于医疗器械领域，以创新科技守护人类健康。<br>汇睿生物 — HuiRayMed，让医疗关怀触手可及。</p>
+        <div class="btn-group">
+            <a href="#products" class="btn btn-primary">了解产品</a>
+            <a href="#contact" class="btn btn-outline">联系我们</a>
+        </div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">关于我们</h2>
+        <p class="section-subtitle">About HuiRayMed</p>
+        <div class="about-grid">
+            <div class="about-text">
+                <p><strong>深圳前海汇睿生物技术有限公司</strong>（品牌名：HuiRayMed）成立于深圳前海，是一家专注于医疗器械研发、生产和销售的创新型企业。</p>
+                <p>公司秉承"点亮视界，触手可及"的企业使命，致力于通过前沿科技为医疗机构和患者提供高品质的医疗器械解决方案。</p>
+                <p>公司总部位于深圳市坪山区生物医药创新产业园，拥有先进的研发实验室和符合GMP标准的生产车间。</p>
+                <div class="about-highlights">
+                    <div class="item"><div class="num">10+</div><div class="label">研发项目</div></div>
+                    <div class="item"><div class="num">ISO</div><div class="label">质量管理体系</div></div>
+                    <div class="item"><div class="num">100%</div><div class="label">客户满意度</div></div>
+                </div>
+            </div>
+            <div class="about-image">🏥</div>
+        </div>
+    </div>
+</section>
+
+<section id="products" class="section-alt">
+    <div class="container">
+        <h2 class="section-title">产品中心</h2>
+        <p class="section-subtitle">以科技创新，守护每一次健康</p>
+        <div class="products-grid">
+            <div class="product-card"><div class="icon">👁️</div><h3>眼科诊断设备</h3><p>高精度眼科成像与诊断设备，助力眼科医生精准掌握患者眼部健康状况。</p></div>
+            <div class="product-card"><div class="icon">🔬</div><h3>手术辅助器械</h3><p>精密手术器械及辅助设备，以人体工学设计优化手术流程。</p></div>
+            <div class="product-card"><div class="icon">💡</div><h3>智能医疗系统</h3><p>整合物联网与大数据技术，实现设备互联、数据共享与远程诊疗支持。</p></div>
+            <div class="product-card"><div class="icon">🧪</div><h3>体外诊断试剂</h3><p>高品质体外诊断试剂及配套耗材，覆盖常见疾病筛查与个性化医疗检测需求。</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="why">
+    <div class="container">
+        <h2 class="section-title">为什么选择我们</h2>
+        <p class="section-subtitle">专注专业，值得信赖</p>
+        <div class="why-grid">
+            <div class="why-card"><div class="emoji">🏆</div><h4>专业团队</h4><p>由医疗器械行业资深专家领衔，研发团队拥有多年技术积累和临床实践经验。</p></div>
+            <div class="why-card"><div class="emoji">✅</div><h4>质量保障</h4><p>严格遵循ISO13485质量管理体系，从研发到生产全流程管控。</p></div>
+            <div class="why-card"><div class="emoji">🤝</div><h4>客户至上</h4><p>从售前咨询到售后支持，提供全周期的专业服务。</p></div>
+            <div class="why-card"><div class="emoji">🚀</div><h4>持续创新</h4><p>保持对前沿技术的敏锐洞察，持续投入研发。</p></div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section-alt">
+    <div class="container">
+        <h2 class="section-title">联系我们</h2>
+        <p class="section-subtitle">期待与您的合作</p>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>联系方式</h3>
+                <div class="item"><div class="icon">👤</div><div><div class="label">联系人</div><div class="value">周源辉</div></div></div>
+                <div class="item"><div class="icon">📞</div><div><div class="label">电话</div><div class="value"><a href="tel:18000780071">18000780071</a></div></div></div>
+                <div class="item"><div class="icon">📧</div><div><div class="label">邮箱</div><div class="value"><a href="mailto:info@huiraymed.com">info@huiraymed.com</a></div></div></div>
+                <div class="item"><div class="icon">📍</div><div><div class="label">地址</div><div class="value">深圳市坪山区坑梓街道金沙社区金辉路14号<br>深圳市生物医药创新产业园区11号楼11层</div></div></div>
+            </div>
+            <div class="contact-map"><div><div style="font-size:2.5rem;margin-bottom:12px">📍</div><strong>深圳市坪山区</strong><br>生物医药创新产业园区<br>11号楼11层</div></div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="brand">深圳前海汇睿生物技术有限公司</div>
+        <p style="margin-bottom:8px">HuiRayMed · 点亮视界 触手可及</p>
+        <p style="font-size:.85rem;opacity:.6">电话：18000780071 &nbsp;|&nbsp; 邮箱：info@huiraymed.com</p>
+        <p class="copy">&copy; 2025 深圳前海汇睿生物技术有限公司 版权所有</p>
+    </div>
+</footer>
+
+<script>
+const h=document.getElementById('hamburger'),n=document.getElementById('navLinks');
+h.addEventListener('click',()=>n.classList.toggle('open'));
+n.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>n.classList.remove('open')));
+</script>
+</body>
+</html>
