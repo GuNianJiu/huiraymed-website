@@ -383,13 +383,15 @@ footer {
     background: #0a4b78;
     color: rgba(255, 255, 255, 0.8);
     padding: 48px 0 24px;
+    text-align: left;
 }
 
 footer .footer-content {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
     gap: 32px;
     margin-bottom: 32px;
+    text-align: left !important;
 }
 
 footer .footer-brand .brand {
@@ -417,6 +419,8 @@ footer .footer-links h4 {
 
 footer .footer-links ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 footer .footer-links li {
