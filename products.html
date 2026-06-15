@@ -301,8 +301,15 @@
         <div class="container">
             <h2 class="section-title">产品列表</h2>
 
+            <div class="category-tabs">
+                <button class="tab active" data-category="all">全部产品</button>
+                <button class="tab" data-category="diagnostic">诊断试剂</button>
+                <button class="tab" data-category="consumables">眼科耗材</button>
+                <button class="tab" data-category="surgical">手术器械</button>
+            </div>
+
             <div class="products-grid">
-                <div class="product-card">
+                <div class="product-card" data-category="diagnostic">
                     <div class="product-image" onclick="openModal(this, '', '泪液检测酚红棉线')">
                         🧵
                         <span class="zoom-hint">点击放大</span>
@@ -322,7 +329,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="diagnostic">
                     <div class="product-image" onclick="openModal(this, '', '泪液检测滤纸条')">
                         📝
                         <span class="zoom-hint">点击放大</span>
@@ -342,7 +349,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="diagnostic">
                     <div class="product-image" onclick="openModal(this, '', '荧光素钠眼科检测试纸')">
                         🔍
                         <span class="zoom-hint">点击放大</span>
@@ -362,7 +369,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="consumables">
                     <div class="product-image" onclick="openModal(this, '', '硬性接触镜验配试纸')">
                         👁️
                         <span class="zoom-hint">点击放大</span>
@@ -382,7 +389,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="surgical">
                     <div class="product-image" onclick="openModal(this, '', '一次性使用负压吸附角膜环钻（供体）')">
                         ⚙️
                         <span class="zoom-hint">点击放大</span>
@@ -402,7 +409,7 @@
                     </div>
                 </div>
 
-                <div class="product-card">
+                <div class="product-card" data-category="surgical">
                     <div class="product-image" onclick="openModal(this, '', '一次性使用负压吸附角膜环钻（受体）')">
                         🔧
                         <span class="zoom-hint">点击放大</span>
@@ -437,10 +444,42 @@
 
     <footer>
         <div class="container">
-            <div class="brand">汇睿生物 | HuiRayMed</div>
-            <p style="margin-bottom:8px">专业眼科医疗器械研发、生产与销售</p>
-            <p style="font-size:.85rem;opacity:.6">电话：18000780071 | 邮箱：1787360775@qq.com | 地址：深圳市坪山区生物医药创新产业园</p>
-            <p class="copy">&copy; 2025 深圳前海汇睿生物技术有限公司 版权所有</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="brand">汇睿生物 | HuiRayMed</div>
+                    <p>专业眼科医疗器械研发、生产与销售</p>
+                    <p class="contact-info">电话：18000780071 | 邮箱：1787360775@qq.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="products.html">眼科诊断设备</a></li>
+                        <li><a href="products.html">眼科手术器械</a></li>
+                        <li><a href="products.html">眼科耗材</a></li>
+                        <li><a href="products.html">眼科诊断试剂</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="index.html#about">公司简介</a></li>
+                        <li><a href="index.html#why">核心优势</a></li>
+                        <li><a href="index.html#contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="index.html#contact">售后服务</a></li>
+                        <li><a href="index.html#contact">技术支持</a></li>
+                        <li><a href="index.html#contact">采购咨询</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copy">&copy; 2025 深圳前海汇睿生物技术有限公司 版权所有 | 专注眼科医疗 守护清晰视界</p>
+                <p class="address">地址：深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区11号楼11层</p>
+            </div>
         </div>
     </footer>
 
