@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileNav();
     initModal();
     initCategoryFilter();
+    initSearch();
 });
 
 function initMobileNav() {
@@ -80,19 +81,68 @@ function initCategoryFilter() {
             this.classList.add('active');
 
             const category = this.getAttribute('data-category');
+            const searchQuery = document.getElementById('searchInput')?.value.toLowerCase() || '';
 
             products.forEach(function(product) {
-                if (category === 'all') {
-                    product.style.display = 'block';
-                } else {
-                    const productCategory = product.getAttribute('data-category');
-                    if (productCategory === category) {
-                        product.style.display = 'block';
-                    } else {
-                        product.style.display = 'none';
-                    }
-                }
+                const productCategory = product.getAttribute('data-category');
+                const productName = product.querySelector('h3')?.textContent.toLowerCase() || '';
+                const productModel = product.querySelector('.spec-value')?.textContent.toLowerCase() || '';
+                const matchCategory = category === 'all' || productCategory === category;
+                const matchSearch = searchQuery === '' || productName.includes(searchQuery) || productModel.includes(searchQuery);
+                
+                product.style.display = (matchCategory && matchSearch) ? 'block' : 'none';
             });
         });
     });
+}
+
+function searchProducts() {
+    const searchInput = document.getElementById('searchInput');
+    const products = document.querySelectorAll('.product-card');
+    const tabs = document.querySelectorAll('.category-tabs .tab');
+    
+    console.log('搜索函数执行中...');
+    console.log('searchInput:', searchInput);
+    console.log('products数量:', products.length);
+    console.log('tabs数量:', tabs.length);
+    
+    if (!searchInput || products.length === 0) {
+        console.log('缺少必要元素');
+        return;
+    }
+    
+    const searchQuery = searchInput.value.toLowerCase();
+    console.log('搜索关键词:', searchQuery);
+    
+    const activeTab = document.querySelector('.category-tabs .tab.active');
+    const category = activeTab?.getAttribute('data-category') || 'all';
+    console.log('当前分类:', category);
+    
+    let visibleCount = 0;
+    products.forEach(function(product) {
+        const productName = product.querySelector('h3')?.textContent.toLowerCase() || '';
+        const productModel = product.querySelector('.spec-value')?.textContent.toLowerCase() || '';
+        const productCategory = product.getAttribute('data-category');
+        
+        const matchCategory = category === 'all' || productCategory === category;
+        const matchSearch = searchQuery === '' || productName.includes(searchQuery) || productModel.includes(searchQuery);
+        
+        product.style.display = (matchCategory && matchSearch) ? 'block' : 'none';
+        if (matchCategory && matchSearch) visibleCount++;
+    });
+    
+    console.log('显示的产品数量:', visibleCount);
+}
+
+function initSearch() {
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    
+    if (searchInput) {
+        searchInput.addEventListener('keyup', searchProducts);
+    }
+    
+    if (searchBtn) {
+        searchBtn.addEventListener('click', searchProducts);
+    }
 }

@@ -280,9 +280,9 @@
             <div class="logo">汇睿生物 | HuiRayMed</div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">首页</a></li>
-                <li><a href="#products">眼科产品中心</a></li>
-                <li><a href="index.html#about">关于汇睿生物</a></li>
-                <li><a href="index.html#contact">联系汇睿生物</a></li>
+                <li><a href="#products">产品简介</a></li>
+                <li><a href="index.html#about">关于我们</a></li>
+                <li><a href="index.html#contact">联系我们</a></li>
             </ul>
             <button class="hamburger" id="hamburger" aria-label="切换导航菜单" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -290,26 +290,23 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>眼科耗材产品系列</h1>
-            <p>专注眼科医疗，提供高品质眼科医用耗材</p>
-        </div>
-    </section>
-
     <section id="products">
         <div class="container">
-            <h2 class="section-title">产品列表</h2>
-
-            <div class="category-tabs">
-                <button class="tab active" data-category="all">全部产品</button>
-                <button class="tab" data-category="diagnostic">诊断试剂</button>
-                <button class="tab" data-category="consumables">眼科耗材</button>
-                <button class="tab" data-category="surgical">手术器械</button>
+            <div class="header-row">
+                <div class="category-tabs">
+                    <button class="tab active" data-category="all">全部产品</button>
+                    <button class="tab" data-category="diagnostic">诊断试剂</button>
+                    <button class="tab" data-category="consumables">眼科耗材</button>
+                    <button class="tab" data-category="surgical">手术器械</button>
+                </div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="搜索产品名称、型号...">
+                    <button id="searchBtn">🔍</button>
+                </div>
             </div>
 
             <div class="products-grid">
-                <div class="product-card" data-category="diagnostic">
+                <div class="product-card" data-category="consumables">
                     <div class="product-image" onclick="openModal(this, '', '泪液检测酚红棉线')">
                         🧵
                         <span class="zoom-hint">点击放大</span>
@@ -325,11 +322,11 @@
                             <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">10袋/盒</span></div>
                             <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">2年</span></div>
                         </div>
-                        <a href="#" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="diagnostic">
+                <div class="product-card" data-category="consumables">
                     <div class="product-image" onclick="openModal(this, '', '泪液检测滤纸条')">
                         📝
                         <span class="zoom-hint">点击放大</span>
@@ -345,11 +342,11 @@
                             <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">10袋/盒</span></div>
                             <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">2年</span></div>
                         </div>
-                        <a href="#" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="diagnostic">
+                <div class="product-card" data-category="consumables">
                     <div class="product-image" onclick="openModal(this, '', '荧光素钠眼科检测试纸')">
                         🔍
                         <span class="zoom-hint">点击放大</span>
@@ -365,7 +362,7 @@
                             <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">10袋/盒</span></div>
                             <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">2年</span></div>
                         </div>
-                        <a href="#" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
                     </div>
                 </div>
 
@@ -385,7 +382,7 @@
                             <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">10袋/盒</span></div>
                             <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">2年</span></div>
                         </div>
-                        <a href="#" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
                     </div>
                 </div>
 
@@ -395,7 +392,7 @@
                         <span class="zoom-hint">点击放大</span>
                     </div>
                     <div class="product-info">
-                        <h3>一次性使用负压吸附角膜环钻（供体）</h3>
+                        <h3>一次性使用负压吸引角膜环钻（供体）</h3>
                         <p class="subtitle">Disposable Negative Pressure Corneal Trephine (Donor)</p>
                         <p class="description">用于角膜移植手术中供体角膜组织的精准切割。采用负压吸附固定，切割边缘整齐，减少组织损伤。</p>
                         <div class="specs">
@@ -405,7 +402,7 @@
                             <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">1袋/盒</span></div>
                             <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">3年</span></div>
                         </div>
-                        <a href="#" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
                     </div>
                 </div>
 
@@ -415,7 +412,7 @@
                         <span class="zoom-hint">点击放大</span>
                     </div>
                     <div class="product-info">
-                        <h3>一次性使用负压吸附角膜环钻（受体）</h3>
+                        <h3>一次性使用负压吸引角膜环钻（受体）</h3>
                         <p class="subtitle">Disposable Negative Pressure Corneal Trephine (Recipient)</p>
                         <p class="description">用于角膜移植手术中受体角膜组织的精准切割。采用负压吸附固定，切割边缘整齐，提高手术精确度。</p>
                         <div class="specs">
@@ -425,7 +422,7 @@
                             <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">1袋/盒</span></div>
                             <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">3年</span></div>
                         </div>
-                        <a href="#" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
                     </div>
                 </div>
             </div>
