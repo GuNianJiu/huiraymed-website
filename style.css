@@ -43,6 +43,7 @@ body {
     color: var(--text-primary);
     background: var(--bg-primary);
     line-height: 1.6;
+    padding-top: 72px;
 }
 
 a {
@@ -156,7 +157,10 @@ header {
     justify-content: center;
     text-align: center;
     padding-top: 72px;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    background: url('products/HR-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero h1 {
@@ -183,7 +187,8 @@ header {
 }
 
 section {
-    padding: 64px 0;
+    padding: 48px 0;
+    scroll-margin-top: 72px;
 }
 
 .section-alt {
@@ -496,10 +501,54 @@ footer .footer-bottom .address {
     cursor: pointer;
 }
 
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.search-bar input {
+    flex: 1;
+    max-width: 280px;
+    padding: 10px 14px;
+    border: 2px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.search-bar button {
+    padding: 10px 16px;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-bar button:hover {
+    background: var(--secondary-color);
+}
+
 .category-tabs {
     display: flex;
     gap: 12px;
-    margin-bottom: 32px;
     flex-wrap: wrap;
 }
 
