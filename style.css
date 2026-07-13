@@ -314,7 +314,7 @@ section {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 24px;
     align-items: flex-start;
 }
@@ -600,6 +600,10 @@ footer .footer-bottom .address {
     .contact-grid {
         grid-template-columns: 1fr;
     }
+    
+    .contact-grid .contact-map {
+        min-height: 260px;
+    }
 
     .about-highlights {
         grid-template-columns: 1fr;
@@ -634,4 +638,77 @@ footer .footer-bottom .address {
         max-width: 280px;
         text-align: center;
     }
+}
+
+.toast-container {
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    pointer-events: none;
+}
+
+.toast {
+    padding: 14px 24px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 0.95rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 280px;
+    max-width: 480px;
+    animation: toastIn 0.35s ease-out;
+    pointer-events: auto;
+}
+
+.toast.success {
+    background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%);
+}
+
+.toast.error {
+    background: linear-gradient(135deg, #e53935 0%, #c62828 100%);
+}
+
+.toast.info {
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+}
+
+.toast.warning {
+    background: linear-gradient(135deg, #fb8c00 0%, #ef6c00 100%);
+}
+
+@keyframes toastIn {
+    from {
+        opacity: 0;
+        transform: translateY(-24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes toastOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+}
+
+.toast.leaving {
+    animation: toastOut 0.3s ease-in forwards;
+}
+
+.form-tip {
+    line-height: 1.6;
 }
