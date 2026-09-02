@@ -8,6 +8,9 @@
     <meta name="keywords" content="汇睿生物,HuiRayMed,眼科医疗器械,眼科耗材,深圳医疗器械,眼科诊断设备,眼科手术器械">
     <meta name="author" content="深圳前海汇睿生物技术有限公司">
     <link rel="canonical" href="https://www.huiraymed.com">
+    <link rel="alternate" hreflang="zh" href="https://www.huiraymed.com/">
+    <link rel="alternate" hreflang="en" href="https://www.huiraymed.com/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.huiraymed.com/">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👁️</text></svg>" type="image/svg+xml">
     
     <meta property="og:title" content="汇睿生物 - 深圳前海汇睿生物技术有限公司 | 眼科医疗器械">
@@ -44,19 +47,22 @@
     }
     </script>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=p9">
 </head>
 <body>
 <header>
     <nav class="nav container">
         <div class="logo">汇睿生物 | HuiRayMed</div>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">首页</a></li>
-            <li><a href="products.html">产品简介</a></li>
-            <li><a href="#about">关于我们</a></li>
-            <li><a href="#contact">联系我们</a></li>
-        </ul>
-        <button class="hamburger" id="hamburger" aria-label="切换导航菜单" aria-expanded="false">
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" data-i18n="nav.home">首页</a></li>
+                <li><a href="products.html" data-i18n="nav.products">产品简介</a></li>
+                <li><a href="#about" data-i18n="nav.about">关于我们</a></li>
+                <li><a href="#contact" data-i18n="nav.contact">联系我们</a></li>
+            </ul>
+            <button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">EN</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="切换导航菜单" data-i18n-attr="aria-label:nav.toggle" aria-expanded="false">
             <span></span><span></span><span></span>
         </button>
     </nav>
@@ -64,100 +70,192 @@
 
 <section class="hero" id="home">
     <div class="container">
-        <h1>汇睿生物 - 专业眼科医疗器械</h1>
-        <p class="slogan">🌟 点亮视界 触手可及</p>
-        <p class="subtitle">深圳前海汇睿生物技术有限公司（HuiRayMed）专注于眼科医疗器械研发、生产和销售，<br>为眼科医疗机构提供高品质的眼科耗材和诊断设备解决方案。</p>
+        <h1 data-i18n="hero.title">汇睿生物 · 专业眼科医疗器械</h1>
+        <p class="slogan" data-i18n="hero.slogan">点亮视界 · 触手可及</p>
+        <p class="subtitle" data-i18n-html="hero.subtitle">深圳前海汇睿生物技术有限公司（HuiRayMed）专注于眼科医疗器械研发、生产和销售，<br>为眼科医疗机构提供高品质的眼科耗材、手术器械及诊断设备整体解决方案。</p>
         <div class="btn-group">
-            <a href="products.html" class="btn btn-primary">产品简介</a>
-            <a href="#contact" class="btn btn-outline">联系我们</a>
+            <a href="products.html" class="btn btn-primary" data-i18n="hero.cta.browse">浏览产品目录</a>
+            <a href="#contact" class="btn btn-outline" data-i18n="hero.cta.quote">获取样品报价</a>
+        </div>
+    </div>
+    <div class="trust-bar">
+        <div class="container">
+            <div class="trust-item"><span class="icon">🏥</span><div><strong>ISO 13485</strong><div data-i18n="trust.iso.label">质量体系认证</div></div></div>
+            <div class="trust-item"><span class="icon">📋</span><div><strong data-i18n="trust.nmpa.title">NMPA 注册</strong><div data-i18n="trust.nmpa.label">产品合规上市</div></div></div>
+            <div class="trust-item"><span class="icon">🔬</span><div><strong data-i18n="trust.hospital.title">10+ 三甲医院</strong><div data-i18n="trust.hospital.label">临床选用</div></div></div>
+            <div class="trust-item"><span class="icon">🛡️</span><div><strong data-i18n="trust.warranty.title">2年 质保</strong><div data-i18n="trust.warranty.label">全程售后保障</div></div></div>
         </div>
     </div>
 </section>
 
 <section id="about">
     <div class="container">
-        <h2 class="section-title">关于我们</h2>
-        <p class="section-subtitle">专注眼科医疗 守护清晰视界</p>
+        <h2 class="section-title" data-i18n="about.title">关于我们</h2>
+        <p class="section-subtitle" data-i18n="about.subtitle">专注眼科医疗 守护清晰视界</p>
         <div class="about-grid">
             <div class="about-text">
-                <p><strong>深圳前海汇睿生物技术有限公司</strong>（品牌名：HuiRayMed）成立于深圳前海，是一家专注于眼科医疗器械研发、生产和销售的创新型企业。</p>
-                <p>公司秉承"点亮视界，触手可及"的企业使命，致力于通过前沿科技为眼科医疗机构和患者提供高品质的眼科耗材及诊断设备解决方案。</p>
-                <p>公司总部位于深圳市坪山区生物医药创新产业园，拥有先进的研发实验室和符合GMP标准的眼科医疗器械生产车间。</p>
+                <p data-i18n-html="about.p1"><strong>深圳前海汇睿生物技术有限公司</strong>（品牌名：HuiRayMed）成立于深圳前海，是一家专注于眼科医疗器械研发、生产和销售的创新型企业。</p>
+                <p data-i18n="about.p2">公司秉承"点亮视界，触手可及"的企业使命，致力于通过前沿科技为眼科医疗机构和患者提供高品质的眼科耗材及诊断设备解决方案。</p>
+                <p data-i18n="about.p3">公司总部位于深圳市坪山区生物医药创新产业园，拥有先进的研发实验室和符合GMP标准的眼科医疗器械生产车间。</p>
                 <div class="about-highlights">
-                    <div class="item"><div class="num">10+</div><div class="label">眼科研发项目</div></div>
-                    <div class="item"><div class="num">ISO13485</div><div class="label">医疗器械质量管理体系</div></div>
-                    <div class="item"><div class="num">100%</div><div class="label">客户满意度</div></div>
+                    <div class="item"><div class="num">10+</div><div class="label" data-i18n="about.h1">眼科研发项目</div></div>
+                    <div class="item"><div class="num">ISO13485</div><div class="label" data-i18n="about.h2">医疗器械质量管理体系</div></div>
+                    <div class="item"><div class="num">100%</div><div class="label" data-i18n="about.h3">客户满意度</div></div>
                 </div>
             </div>
-            <div class="about-image"><img src="products/商标/商标.jpg" alt="汇睿生物商标"></div>
+            <div class="about-image"><img src="images/brand-trademark.jpg" alt="汇睿生物商标"></div>
         </div>
     </div>
 </section>
 
 <section id="why">
     <div class="container">
-        <h2 class="section-title">为什么选择我们</h2>
-        <p class="section-subtitle">专注专业，值得信赖</p>
+        <h2 class="section-title" data-i18n="why.title">为什么选择我们</h2>
+        <p class="section-subtitle" data-i18n="why.subtitle">专注专业，值得信赖</p>
         <div class="why-grid">
-            <div class="why-card"><div class="emoji">🏆</div><h4>专业团队</h4><p>由医疗器械行业资深专家领衔，研发团队拥有多年技术积累和临床实践经验。</p></div>
-            <div class="why-card"><div class="emoji">✅</div><h4>质量保障</h4><p>严格遵循ISO13485质量管理体系，从研发到生产全流程管控。</p></div>
-            <div class="why-card"><div class="emoji">🤝</div><h4>客户至上</h4><p>从售前咨询到售后支持，提供全周期的专业服务。</p></div>
-            <div class="why-card"><div class="emoji">🚀</div><h4>持续创新</h4><p>保持对前沿技术的敏锐洞察，持续投入研发。</p></div>
+            <div class="why-card"><div class="emoji">🏆</div><h4 data-i18n="why.c1.t">专业团队</h4><p data-i18n="why.c1.d">由医疗器械行业资深专家领衔，研发团队拥有多年技术积累和临床实践经验。</p></div>
+            <div class="why-card"><div class="emoji">✅</div><h4 data-i18n="why.c2.t">质量保障</h4><p data-i18n="why.c2.d">严格遵循ISO13485质量管理体系，从研发到生产全流程管控。</p></div>
+            <div class="why-card"><div class="emoji">🤝</div><h4 data-i18n="why.c3.t">客户至上</h4><p data-i18n="why.c3.d">从售前咨询到售后支持，提供全周期的专业服务。</p></div>
+            <div class="why-card"><div class="emoji">🚀</div><h4 data-i18n="why.c4.t">持续创新</h4><p data-i18n="why.c4.d">保持对前沿技术的敏锐洞察，持续投入研发。</p></div>
         </div>
     </div>
 </section>
 
-<section id="contact" class="section-alt">
+<section id="qualification" class="qualification-section">
     <div class="container">
-        <h2 class="section-title">联系我们</h2>
-        <p class="section-subtitle">期待与您的合作</p>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>联系方式</h3>
-                <div class="item"><div class="icon">👤</div><div><div class="label">联系人</div><div class="value">周源辉</div></div></div>
-                <div class="item"><div class="icon">📞</div><div><div class="label">电话</div><div class="value"><a href="tel:18000780071">18000780071</a></div></div></div>
-                <div class="item"><div class="icon">📧</div><div><div class="label">邮箱</div><div class="value"><a href="mailto:1787360775@qq.com">1787360775@qq.com</a></div></div></div>
-                <div class="item"><div class="icon">📍</div><div><div class="label">地址</div><div class="value">深圳市坪山区坑梓街道金沙社区金辉路14号<br>深圳市生物医药创新产业园区11号楼11层</div></div></div>
-            </div>
-            <div class="contact-form">
-                <h3>在线留言</h3>
-                <form id="contactForm" action="mailto:1787360775@qq.com" method="post" enctype="text/plain">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="您的姓名" required>
+        <h2 class="section-title" data-i18n="qual.title">资质证书</h2>
+        <p class="section-subtitle" data-i18n="qual.subtitle">全流程合规认证 · 品质保障</p>
+        <div class="qual-grid" id="qualGrid">
+            <div class="qual-card" data-image="images/cert-01-business-license.jpg" data-name="营业执照" data-name-en="Business License" data-no="统一社会信用代码：91440300342737280L" data-date="长期有效">
+                <div class="qual-cover">
+                    <div class="placeholder">
+                        <span class="emoji">📄</span>
+                        <div><strong data-i18n="qual.c1.ph">营业执照</strong></div>
+                        <span class="tip" data-i18n="qual.tip">点击查看高清扫描件</span>
                     </div>
-                    <div class="form-group">
-                        <input type="tel" name="phone" placeholder="联系电话" required>
+                </div>
+                <div class="qual-info">
+                    <h4 data-i18n="qual.c1.t">企业营业执照</h4>
+                    <div class="qual-no" data-i18n="qual.c1.no">统一社会信用代码：91440300342737280L</div>
+                    <div class="qual-meta">
+                        <span class="status" data-i18n="qual.status">✅ 有效</span>
+                        <span class="preview-btn" data-i18n="qual.preview">查看证书 ↗</span>
                     </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="电子邮箱">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="company" placeholder="公司名称">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="留言内容" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">提交留言</button>
-                </form>
-                <div id="formTip" class="form-tip" style="margin-top:16px;padding:12px 16px;border-radius:8px;background:#e3f2fd;color:#1565c0;display:none">
-                    💡 提交后请在邮件客户端中点击"发送"完成留言
                 </div>
             </div>
+
+            <div class="qual-card" data-image="images/cert-03-medical-device-license.jpg" data-name="医疗器械生产许可证" data-name-en="Medical Device Production License" data-no="许可证编号：粤深食药监械生产许XXXXXXXX号" data-date="有效期至：2028-XX-XX">
+                <div class="qual-cover">
+                    <div class="placeholder">
+                        <span class="emoji">�</span>
+                        <div><strong data-i18n="qual.c2.ph">生产许可证</strong></div>
+                        <span class="tip" data-i18n="qual.tip">点击查看高清扫描件</span>
+                    </div>
+                </div>
+                <div class="qual-info">
+                    <h4 data-i18n="qual.c2.t">医疗器械生产许可证</h4>
+                    <div class="qual-no" data-i18n="qual.c2.no">生产类别：Ⅱ类16眼科器械</div>
+                    <div class="qual-meta">
+                        <span class="status" data-i18n="qual.status">✅ 有效</span>
+                        <span class="preview-btn" data-i18n="qual.preview">查看证书 ↗</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="qual-card" data-image="images/cert-04-product-registration.pdf" data-name="医疗器械产品注册证（泪液检测酚红棉线）" data-name-en="Medical Device Product Registration Certificate (Phenol Red Thread for Lacrimal Detection)" data-no="注册证编号：粤械注准202XXXXXXX" data-date="有效期至：2028-XX-XX">
+                <div class="qual-cover">
+                    <div class="placeholder">
+                        <span class="emoji">🧬</span>
+                        <div><strong data-i18n="qual.c3.ph">产品注册证</strong></div>
+                        <span class="tip" data-i18n="qual.tip">点击查看高清扫描件</span>
+                    </div>
+                </div>
+                <div class="qual-info">
+                    <h4 data-i18n="qual.c3.t">产品注册证（泪液检测酚红棉线）</h4>
+                    <div class="qual-no" data-i18n="qual.c3.no">NMPA 国家药监局批准上市</div>
+                    <div class="qual-meta">
+                        <span class="status" data-i18n="qual.status">✅ 有效</span>
+                        <span class="preview-btn" data-i18n="qual.preview">查看证书 ↗</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- 证书大图预览弹窗 -->
+<div class="preview-modal" id="certModal">
+    <span class="pm-close" id="certClose">&times;</span>
+    <div class="pm-nav pm-prev" id="certPrev">‹</div>
+    <div class="pm-nav pm-next" id="certNext">›</div>
+    <div class="pm-content">
+        <div class="pm-title" id="certTitle" data-i18n="cm.title">资质证书预览</div>
+        <div class="pm-image-wrap">
+            <img id="certImg" src="" alt="" style="display:none">
+            <iframe id="certIframe" src="" style="display:none"></iframe>
+            <div class="pm-placeholder" id="certPlaceholder">
+                <span class="ph-emoji">📷</span>
+                <p><strong data-i18n="cm.noimg">暂无高清扫描件</strong></p>
+                <p style="font-size:0.95rem" data-i18n="cm.contact">请联系我们获取完整电子版资质文件</p>
+                <span class="ph-tip" data-i18n="cm.phone">📞 180-0078-0071 周经理</span>
+            </div>
+        </div>
+        <div class="pm-counter" id="certCounter">1 / 3</div>
+    </div>
+</div>
+
+<section id="contact" class="section-alt">
+    <div class="container">
+        <h2 class="section-title" data-i18n="contact.title">联系我们</h2>
+        <p class="section-subtitle" data-i18n="contact.subtitle">期待与您的合作</p>
+        <div class="contact-grid">
+            <div class="contact-people">
+                <h3 data-i18n="contact.info">联系方式</h3>
+                <div class="people-groups">
+                    <div class="people-group">
+                        <div class="group-label" data-i18n="contact.production.lbl">生产负责人</div>
+                        <div class="person-list">
+                            <div class="person-card">
+                                <div class="p-head"><span class="p-name" data-i18n="contact.person.val">周源辉</span><span class="p-pos" data-i18n="contact.production.lbl">生产负责人</span></div>
+                                <div class="p-lines"><a href="tel:18000780071">📞 18000780071</a><a href="mailto:1787360775@qq.com">📧 1787360775@qq.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="people-group">
+                        <div class="group-label" data-i18n="contact.sales.lbl">销售团队</div>
+                        <div class="person-list">
+                            <div class="person-card">
+                                <div class="p-head"><span class="p-name" data-i18n="contact.person2.name">周浩</span><span class="p-pos" data-i18n="contact.person2.pos">区域销售经理</span></div>
+                                <div class="p-lines"><a href="tel:18138875900">📞 18138875900</a><a href="mailto:363584850@qq.com">📧 363584850@qq.com</a></div>
+                            </div>
+                            <div class="person-card">
+                                <div class="p-head"><span class="p-name" data-i18n="contact.person3.name">稽君甫</span><span class="p-pos" data-i18n="contact.person3.pos">区域销售经理</span></div>
+                                <div class="p-lines"><a href="tel:18879493813">📞 18879493813</a><a href="mailto:justin9796@163.com">📧 justin9796@163.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-side">
+                <div class="item"><div class="icon">☎️</div><div><div class="label" data-i18n="contact.company.lbl">公司电话</div><div class="value"><a href="tel:17724602842">177-2460-2842</a></div></div></div>
+                <div class="item"><div class="icon">📍</div><div><div class="label" data-i18n="contact.addr.lbl">地址</div><div class="value" data-i18n-html="contact.addr.val">深圳市坪山区坑梓街道金沙社区金辉路14号<br>深圳市生物医药创新产业园区11号楼11层</div></div></div>
             <div class="contact-map">
                 <a href="https://map.baidu.com/search/深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区" target="_blank" rel="noopener noreferrer" class="contact-map-link">
                     <div>
-                        <div style="font-size:1.2rem;margin-bottom:8px">📍 点击查看地图</div>
-                        <div>深圳市坪山区坑梓街道金沙社区金辉路14号<br>生物医药创新产业园区</div>
+                        <div style="font-size:1.2rem;margin-bottom:8px" data-i18n="contact.map.link">📍 点击查看地图</div>
+                        <div data-i18n-html="contact.map.addr">深圳市坪山区坑梓街道金沙社区金辉路14号<br>生物医药创新产业园区</div>
                     </div>
                 </a>
-                <iframe 
-                    src="https://map.baidu.com/search/深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区" 
-                    width="100%" 
-                    height="360" 
-                    frameborder="0" 
+                <iframe
+                    src="https://map.baidu.com/search/深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区"
+                    width="100%"
+                    height="360"
+                    frameborder="0"
                     style="border-radius:16px;display:none"
                     title="公司位置地图">
                 </iframe>
+            </div>
             </div>
         </div>
     </div>
@@ -168,42 +266,77 @@
         <div class="footer-content">
             <div class="footer-brand">
                 <div class="brand">汇睿生物 | HuiRayMed</div>
-                <p>专业眼科医疗器械研发、生产与销售</p>
-                <p class="contact-info">电话：18000780071 | 邮箱：1787360775@qq.com</p>
+                <p data-i18n="footer.desc">专业眼科医疗器械研发、生产与销售</p>
+                <p class="contact-info" data-i18n="footer.contact">电话：18000780071 | 邮箱：1787360775@qq.com</p>
             </div>
             <div class="footer-links">
-                <h4>产品中心</h4>
+                <h4 data-i18n="footer.p.t">产品中心</h4>
                 <ul>
-                    <li><a href="products.html">眼科诊断设备</a></li>
-                    <li><a href="products.html">眼科手术器械</a></li>
-                    <li><a href="products.html">眼科耗材</a></li>
-                    <li><a href="products.html">眼科诊断试剂</a></li>
+                    <li><a href="products.html" data-i18n="footer.p.diag">眼科诊断设备</a></li>
+                    <li><a href="products.html" data-i18n="footer.p.surg">眼科手术器械</a></li>
+                    <li><a href="products.html" data-i18n="footer.p.cons">眼科耗材</a></li>
+                    <li><a href="products.html" data-i18n="footer.p.reag">眼科诊断试剂</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>关于我们</h4>
+                <h4 data-i18n="footer.a.t">关于我们</h4>
                 <ul>
-                    <li><a href="#about">公司简介</a></li>
-                    <li><a href="#why">核心优势</a></li>
-                    <li><a href="#contact">联系我们</a></li>
+                    <li><a href="#about" data-i18n="footer.a.comp">公司简介</a></li>
+                    <li><a href="#why" data-i18n="footer.a.adv">核心优势</a></li>
+                    <li><a href="#contact" data-i18n="footer.a.cont">联系我们</a></li>
                 </ul>
             </div>
             <div class="footer-links">
-                <h4>服务支持</h4>
+                <h4 data-i18n="footer.s.t">服务支持</h4>
                 <ul>
-                    <li><a href="#contact">售后服务</a></li>
-                    <li><a href="#contact">技术支持</a></li>
-                    <li><a href="#contact">采购咨询</a></li>
+                    <li><a href="#contact" data-i18n="footer.s.after">售后服务</a></li>
+                    <li><a href="#contact" data-i18n="footer.s.tech">技术支持</a></li>
+                    <li><a href="#contact" data-i18n="footer.s.purch">采购咨询</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="copy">&copy; 2025 深圳前海汇睿生物技术有限公司 版权所有 | 专注眼科医疗 守护清晰视界</p>
-            <p class="address">地址：深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区11号楼11层</p>
+            <p class="copy" data-i18n="footer.copy">&copy; 2025 深圳前海汇睿生物技术有限公司 版权所有 | 专注眼科医疗 守护清晰视界</p>
+            <p class="address" data-i18n="footer.addr">地址：深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区11号楼11层</p>
         </div>
     </div>
 </footer>
 
-<script src="script.js"></script>
+<!-- 浮动在线留言窗口 -->
+<button class="chat-fab" id="chatFab" type="button" aria-label="在线留言" data-i18n-attr="aria-label:contact.form.title">
+    <span aria-hidden="true">💬</span>
+</button>
+<div class="chat-window" id="chatWindow" role="dialog" aria-label="在线留言" data-i18n-attr="aria-label:contact.form.title">
+    <div class="chat-header" id="chatHeader">
+        <span class="chat-grip" aria-hidden="true">⠿</span>
+        <h3 data-i18n="contact.form.title">在线留言</h3>
+        <button class="chat-close" id="chatClose" type="button" aria-label="关闭" data-i18n-attr="aria-label:chat.close">×</button>
+    </div>
+    <div class="chat-body">
+        <form id="contactForm" action="mailto:1787360775@qq.com" method="post" enctype="text/plain">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="您的姓名" data-i18n-attr="placeholder:contact.form.name" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" name="phone" placeholder="联系电话" data-i18n-attr="placeholder:contact.form.phone" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="电子邮箱" data-i18n-attr="placeholder:contact.form.email">
+            </div>
+            <div class="form-group">
+                <input type="text" name="company" placeholder="公司名称" data-i18n-attr="placeholder:contact.form.company">
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="留言内容" data-i18n-attr="placeholder:contact.form.msg" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">提交留言</button>
+        </form>
+        <div id="formTip" class="form-tip" style="margin-top:16px;padding:12px 16px;border-radius:8px;background:#e3f2fd;color:#1565c0;display:none" data-i18n="contact.form.tip">
+            💡 提交后请在邮件客户端中点击"发送"完成留言
+        </div>
+    </div>
+</div>
+
+<script src="script.js?v=p10"></script>
 </body>
 </html>

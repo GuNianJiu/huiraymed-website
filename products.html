@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>汇睿生物 - 眼科医疗器械产品中心 | HuiRayMed</title>
     <meta name="description" content="汇睿生物专业眼科医疗器械产品，包括眼科诊断设备、手术器械、眼科耗材及诊断试剂。">
-    <meta name="keywords" content="汇睿生物,HuiRayMed,眼科医疗器械,眼科耗材,泪液检测棉线">
+    <meta name="keywords" content="汇睿生物,HuiRayMed,眼科医疗器械,眼科耗材,泪液检测酚红棉线">
     <meta name="author" content="深圳前海汇睿生物技术有限公司">
     <link rel="canonical" href="https://www.huiraymed.com/products.html">
+    <link rel="alternate" hreflang="zh" href="https://www.huiraymed.com/products.html">
+    <link rel="alternate" hreflang="en" href="https://www.huiraymed.com/products.html?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://www.huiraymed.com/products.html">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👁️</text></svg>" type="image/svg+xml">
     
     <meta property="og:title" content="汇睿生物 - 眼科医疗器械产品中心 | HuiRayMed">
-    <meta property="og:description" content="汇睿生物专业眼科医疗器械产品，包括泪液检测棉线、滤纸条、荧光素钠检测试纸等眼科耗材。">
+    <meta property="og:description" content="汇睿生物专业眼科医疗器械产品，包括泪液检测酚红棉线、滤纸条、荧光素钠检测试纸等眼科耗材。">
     <meta property="og:url" content="https://www.huiraymed.com/products.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="汇睿生物">
@@ -21,7 +24,7 @@
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "汇睿生物眼科医疗器械",
-      "description": "专业眼科医疗器械产品系列，包括泪液检测棉线、滤纸条、荧光素钠检测试纸等眼科耗材",
+      "description": "专业眼科医疗器械产品系列，包括泪液检测酚红棉线、滤纸条、荧光素钠检测试纸等眼科耗材",
       "brand": {
         "@type": "Organization",
         "name": "深圳前海汇睿生物技术有限公司"
@@ -29,7 +32,7 @@
     }
     </script>
     
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=p9">
     <style>
         .hero {
             padding: 120px 0 64px;
@@ -278,13 +281,16 @@
     <header>
         <nav class="nav container">
             <div class="logo">汇睿生物 | HuiRayMed</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">首页</a></li>
-                <li><a href="#products">产品简介</a></li>
-                <li><a href="index.html#about">关于我们</a></li>
-                <li><a href="index.html#contact">联系我们</a></li>
-            </ul>
-            <button class="hamburger" id="hamburger" aria-label="切换导航菜单" aria-expanded="false">
+            <div class="nav-right">
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+                    <li><a href="#products" data-i18n="nav.products">产品简介</a></li>
+                    <li><a href="index.html#about" data-i18n="nav.about">关于我们</a></li>
+                    <li><a href="index.html#contact" data-i18n="nav.contact">联系我们</a></li>
+                </ul>
+                <button class="lang-switch" id="langSwitch" type="button" aria-label="Switch language">EN</button>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="切换导航菜单" data-i18n-attr="aria-label:nav.toggle" aria-expanded="false">
                 <span></span><span></span><span></span>
             </button>
         </nav>
@@ -294,148 +300,263 @@
         <div class="container">
             <div class="header-row">
                 <div class="category-tabs">
-                    <button class="tab active" data-category="all">全部产品</button>
-                    <button class="tab" data-category="consumables">眼科耗材</button>
-                    <button class="tab" data-category="surgical">手术器械</button>
+                    <button class="tab active" data-category="all" data-i18n="cat.all">全部产品</button>
+                    <button class="tab" data-category="consumables" data-i18n="cat.cons">眼科耗材</button>
+                    <button class="tab" data-category="surgical" data-i18n="cat.surg">手术器械</button>
                 </div>
                 <div class="search-bar">
-                    <input type="text" id="searchInput" placeholder="搜索产品名称、型号...">
+                    <input type="text" id="searchInput" placeholder="搜索产品名称、型号..." data-i18n-attr="placeholder:search.ph">
                     <button id="searchBtn">🔍</button>
                 </div>
             </div>
 
             <div class="products-grid">
-                <div class="product-card" data-category="consumables">
-                    <div class="product-image" onclick="openModal(this, '', '泪液检测酚红棉线')">
-                        🧵
-                        <span class="zoom-hint">点击放大</span>
+                <div class="product-card" data-category="consumables"
+                    data-image="images/product-HR-A-phenol-red-thread.jpg" data-icon="🧵"
+                    data-model="HR-A" data-pkg1="2条/袋" data-pkg1-en="2 strips/pack" data-pkg2="10袋/盒" data-pkg2-en="10 packs/box" data-life="2年" data-life-en="2 years" data-license="粤食药监械生产许20214419号" data-license-en="粤食药监械生产许20214419号"
+                    data-clinic1="干眼症筛查" data-clinic1-en="Dry Eye Screening" data-clinic1-desc="用于眼科门诊干眼症常规筛查，快速评估泪液分泌功能，5分钟出结果。" data-clinic1-desc-en="Routine dry eye screening in ophthalmic clinics; rapid assessment of tear secretion function with results in 5 minutes."
+                    data-clinic2="术后随访" data-clinic2-en="Postoperative Follow-up" data-clinic2-desc="白内障、LASIK等眼科手术后泪膜功能恢复情况监测。" data-clinic2-desc-en="Monitoring tear film function recovery after cataract, LASIK, and other ophthalmic surgeries."
+                    data-cert="粤械注准20252160803" data-cert-en="粤械注准20252160803">
+                    <div class="product-image" data-open-product="0">
+                        <img src="images/product-HR-A-phenol-red-thread.jpg" alt="泪液检测酚红棉线" onerror="this.style.display='none';var fb=this.parentNode.querySelector('.img-fallback');if(fb){fb.style.display='flex'}">
+                        <div class="img-fallback" style="display:none">🧵</div>
+                        <span class="zoom-hint" data-i18n="card.zoom">点击查看详情</span>
                     </div>
                     <div class="product-info">
-                        <h3>泪液检测酚红棉线</h3>
+                        <h3 data-i18n="p1.name">泪液检测酚红棉线</h3>
                         <p class="subtitle">Lacrimal Detection Phenol Red Thread</p>
-                        <p class="description">用于检测泪液分泌量的眼科诊断耗材，辅助判断干眼症等眼部疾病。采用酚红指示剂，操作简便，结果准确。</p>
+                        <p class="description" data-i18n="p1.desc">用于检测泪液分泌量的眼科诊断耗材，辅助判断干眼症等眼部疾病。采用酚红指示剂，操作简便，结果准确。</p>
                         <div class="specs">
-                            <h4>产品规格</h4>
-                            <div class="spec-item"><span class="spec-label">型号</span><span class="spec-value">HR-A</span></div>
-                            <div class="spec-item"><span class="spec-label">单包装</span><span class="spec-value">1条/袋</span></div>
-                            <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">10袋/盒</span></div>
-                            <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">2年</span></div>
+                            <h4 data-i18n="card.specs">产品规格</h4>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.model">型号</span><span class="spec-value">HR-A</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg1">单包装</span><span class="spec-value" data-i18n="spec.1strip">1条/袋</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg2">盒包装</span><span class="spec-value" data-i18n="spec.10pack">10袋/盒</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.life">有效期</span><span class="spec-value" data-i18n="spec.2y">2年</span></div>
                         </div>
-                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary" data-i18n="card.inquiry" data-inquiry="0">了解详情 →</a>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="consumables">
-                    <div class="product-image" onclick="openModal(this, '', '泪液检测滤纸条')">
-                        📝
-                        <span class="zoom-hint">点击放大</span>
+                <div class="product-card" data-category="consumables"
+                    data-image="images/product-HR-B-schirmer-filter-paper.jpg" data-icon="📝"
+                    data-model="HR-B" data-pkg1="2条/袋" data-pkg1-en="2 strips/pack" data-pkg2="10袋/盒" data-pkg2-en="10 packs/box" data-life="2年" data-life-en="2 years" data-license="粤食药监械生产许20214419号" data-license-en="粤食药监械生产许20214419号"
+                    data-clinic1="Schirmer试验" data-clinic1-en="Schirmer's Test" data-clinic1-desc="眼科临床泪液分泌功能标准检测方法，区分水性泪液缺乏型干眼。" data-clinic1-desc-en="Standard clinical method for tear secretion function testing; differentiates aqueous-deficient dry eye."
+                    data-clinic2="体检筛查" data-clinic2-en="Health Screening" data-clinic2-desc="适合大规模眼科体检、社区筛查使用，成本低、操作便捷。" data-clinic2-desc-en="Suitable for large-scale ophthalmic examinations and community screening; cost-effective and easy to operate."
+                    data-cert="粤械注准20252160804" data-cert-en="粤械注准20252160804">
+                    <div class="product-image" data-open-product="1">
+                        <img src="images/product-HR-B-schirmer-filter-paper.jpg" alt="泪液检测滤纸条" onerror="this.style.display='none';var fb=this.parentNode.querySelector('.img-fallback');if(fb){fb.style.display='flex'}">
+                        <div class="img-fallback" style="display:none">📝</div>
+                        <span class="zoom-hint" data-i18n="card.zoom">点击查看详情</span>
                     </div>
                     <div class="product-info">
-                        <h3>泪液检测滤纸条</h3>
+                        <h3 data-i18n="p2.name">泪液检测滤纸条</h3>
                         <p class="subtitle">Lacrimal Detection Filter Paper</p>
-                        <p class="description">用于Schirmer试验的眼科检测耗材，精准测量泪液分泌量。高吸水性滤纸材质，质地柔软，对眼部无刺激。</p>
+                        <p class="description" data-i18n="p2.desc">用于Schirmer试验的眼科检测耗材，精准测量泪液分泌量。高吸水性滤纸材质，质地柔软，对眼部无刺激。</p>
                         <div class="specs">
-                            <h4>产品规格</h4>
-                            <div class="spec-item"><span class="spec-label">型号</span><span class="spec-value">HR-B</span></div>
-                            <div class="spec-item"><span class="spec-label">单包装</span><span class="spec-value">2条/袋</span></div>
-                            <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">10袋/盒</span></div>
-                            <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">2年</span></div>
+                            <h4 data-i18n="card.specs">产品规格</h4>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.model">型号</span><span class="spec-value">HR-B</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg1">单包装</span><span class="spec-value" data-i18n="spec.2strip">2条/袋</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg2">盒包装</span><span class="spec-value" data-i18n="spec.10pack">10袋/盒</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.life">有效期</span><span class="spec-value" data-i18n="spec.2y">2年</span></div>
                         </div>
-                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary" data-i18n="card.inquiry" data-inquiry="1">了解详情 →</a>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="consumables">
-                    <div class="product-image" onclick="openModal(this, '', '荧光素钠眼科检测试纸')">
-                        🔍
-                        <span class="zoom-hint">点击放大</span>
+                <div class="product-card" data-category="consumables"
+                    data-image="images/product-HR-C-fluorescein-strip.jpg" data-icon="🔍"
+                    data-model="HR-C" data-pkg1="1条/袋" data-pkg1-en="1 strip/pack" data-pkg2="10袋/盒" data-pkg2-en="10 packs/box" data-life="2年" data-life-en="2 years" data-license="／" data-license-en="/"
+                    data-clinic1="角膜损伤检测" data-clinic1-en="Corneal Injury Detection" data-clinic1-desc="辅助诊断角膜上皮缺损、角膜溃疡、化学烧伤等角膜疾病。" data-clinic1-desc-en="Assists in diagnosing corneal epithelial defects, corneal ulcers, chemical burns, and other corneal diseases."
+                    data-clinic2="泪膜破裂时间" data-clinic2-en="Tear Break-up Time" data-clinic2-desc="配合BUT试验，评估泪膜稳定性及干眼严重程度。" data-clinic2-desc-en="Used with BUT test to evaluate tear film stability and dry eye severity."
+                    data-cert="／" data-cert-en="/">
+                    <div class="product-image" data-open-product="2">
+                        <img src="images/product-HR-C-fluorescein-strip.jpg" alt="荧光素钠眼科检测试纸" onerror="this.style.display='none';var fb=this.parentNode.querySelector('.img-fallback');if(fb){fb.style.display='flex'}">
+                        <div class="img-fallback" style="display:none">🔍</div>
+                        <span class="zoom-hint" data-i18n="card.zoom">点击查看详情</span>
                     </div>
                     <div class="product-info">
-                        <h3>荧光素钠眼科检测试纸</h3>
+                        <h3 data-i18n="p3.name">荧光素钠眼科检测试纸</h3>
                         <p class="subtitle">Fluorescein Sodium Ophthalmic Test Strip</p>
-                        <p class="description">用于角膜染色检查的眼科诊断耗材，辅助诊断角膜损伤、干眼症等疾病。荧光素钠含量精准，显色清晰。</p>
+                        <p class="description" data-i18n="p3.desc">用于角膜染色检查的眼科诊断耗材，辅助诊断角膜损伤、干眼症等疾病。荧光素钠含量精准，显色清晰。</p>
                         <div class="specs">
-                            <h4>产品规格</h4>
-                            <div class="spec-item"><span class="spec-label">型号</span><span class="spec-value">HR-C</span></div>
-                            <div class="spec-item"><span class="spec-label">单包装</span><span class="spec-value">1条/袋</span></div>
-                            <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">10袋/盒</span></div>
-                            <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">2年</span></div>
+                            <h4 data-i18n="card.specs">产品规格</h4>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.model">型号</span><span class="spec-value">HR-C</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg1">单包装</span><span class="spec-value" data-i18n="spec.1strip">1条/袋</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg2">盒包装</span><span class="spec-value" data-i18n="spec.10pack">10袋/盒</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.life">有效期</span><span class="spec-value" data-i18n="spec.2y">2年</span></div>
                         </div>
-                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary" data-i18n="card.inquiry" data-inquiry="2">了解详情 →</a>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="consumables">
-                    <div class="product-image" onclick="openModal(this, '', '硬性接触镜验配试纸')">
+                <div class="product-card" data-category="consumables"
+                    data-image="images/product-HR-D-rgp-fitting-strip.jpg" data-icon="👁️"
+                    data-model="HR-D" data-pkg1="1条/袋" data-pkg1-en="1 strip/pack" data-pkg2="10袋/盒" data-pkg2-en="10 packs/box" data-life="2年" data-life-en="2 years" data-license="／" data-license-en="/"
+                    data-clinic1="RGP适配评估" data-clinic1-en="RGP Fitting Assessment" data-clinic1-desc="硬性透气性角膜接触镜配适状态评估，判断镜片与角膜之间的接触关系。" data-clinic1-desc-en="Assesses fitting status of rigid gas permeable contact lenses; evaluates the lens-cornea contact relationship."
+                    data-clinic2="OK镜验配" data-clinic2-en="Ortho-K Fitting" data-clinic2-desc="角膜塑形镜（OK镜）验配过程中泪液交换及定位效果评估。" data-clinic2-desc-en="Evaluates tear exchange and lens positioning during orthokeratology (Ortho-K) lens fitting."
+                    data-cert="／" data-cert-en="/">
+                    <div class="product-image" data-open-product="3">
                         👁️
-                        <span class="zoom-hint">点击放大</span>
+                        <span class="zoom-hint" data-i18n="card.zoom">点击查看详情</span>
                     </div>
                     <div class="product-info">
-                        <h3>硬性接触镜验配试纸</h3>
+                        <h3 data-i18n="p4.name">硬性接触镜验配试纸</h3>
                         <p class="subtitle">RGP Fitting Test Strip</p>
-                        <p class="description">用于硬性透气性角膜接触镜（RGP）验配的辅助诊断耗材，帮助评估镜片适配情况，提高验配准确性。</p>
+                        <p class="description" data-i18n="p4.desc">用于硬性透气性角膜接触镜（RGP）验配的辅助诊断耗材，帮助评估镜片适配情况，提高验配准确性。</p>
                         <div class="specs">
-                            <h4>产品规格</h4>
-                            <div class="spec-item"><span class="spec-label">型号</span><span class="spec-value">HR-D</span></div>
-                            <div class="spec-item"><span class="spec-label">单包装</span><span class="spec-value">1条/袋</span></div>
-                            <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">10袋/盒</span></div>
-                            <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">2年</span></div>
+                            <h4 data-i18n="card.specs">产品规格</h4>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.model">型号</span><span class="spec-value">HR-D</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg1">单包装</span><span class="spec-value" data-i18n="spec.1strip">1条/袋</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg2">盒包装</span><span class="spec-value" data-i18n="spec.10pack">10袋/盒</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.life">有效期</span><span class="spec-value" data-i18n="spec.2y">2年</span></div>
                         </div>
-                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary" data-i18n="card.inquiry" data-inquiry="3">了解详情 →</a>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="surgical">
-                    <div class="product-image" onclick="openModal(this, '', '一次性使用负压吸附角膜环钻（供体）')">
+                <div class="product-card" data-category="surgical"
+                    data-image="images/product-CTD-02-corneal-trephine-donor.jpg" data-icon="⚙️"
+                    data-model="CTD-02" data-pkg1="1套/袋" data-pkg1-en="1 set/pack" data-pkg2="1袋/盒" data-pkg2-en="1 pack/box" data-life="3年" data-life-en="3 years" data-license="粤食药监械生产许20214419号" data-license-en="粤食药监械生产许20214419号"
+                    data-clinic1="角膜移植手术" data-clinic1-en="Corneal Transplant Surgery" data-clinic1-desc="穿透性角膜移植、板层角膜移植手术中供体角膜植片的标准化制备。" data-clinic1-desc-en="Standardized preparation of donor corneal grafts in penetrating and lamellar keratoplasty."
+                    data-clinic2="眼库组织制备" data-clinic2-en="Eye Bank Tissue Preparation" data-clinic2-desc="眼库供体角膜加工环节必备器械，保证植片尺寸一致性。" data-clinic2-desc-en="Essential instrument for eye bank donor cornea processing; ensures graft size consistency."
+                    data-cert="粤械注准20212160713" data-cert-en="粤械注准20212160713">
+                    <div class="product-image" data-open-product="4">
                         ⚙️
-                        <span class="zoom-hint">点击放大</span>
+                        <span class="zoom-hint" data-i18n="card.zoom">点击查看详情</span>
                     </div>
                     <div class="product-info">
-                        <h3>一次性使用负压吸引角膜环钻（供体）</h3>
+                        <h3 data-i18n="p5.name">一次性使用负压吸引角膜环钻（供体）</h3>
                         <p class="subtitle">Disposable Negative Pressure Corneal Trephine (Donor)</p>
-                        <p class="description">用于角膜移植手术中供体角膜组织的精准切割。采用负压吸附固定，切割边缘整齐，减少组织损伤。</p>
+                        <p class="description" data-i18n="p5.desc">用于角膜移植手术中供体角膜组织的精准切割。采用负压吸附固定，切割边缘整齐，减少组织损伤。</p>
                         <div class="specs">
-                            <h4>产品规格</h4>
-                            <div class="spec-item"><span class="spec-label">型号</span><span class="spec-value">CTD-02</span></div>
-                            <div class="spec-item"><span class="spec-label">单包装</span><span class="spec-value">1套/袋</span></div>
-                            <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">1袋/盒</span></div>
-                            <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">3年</span></div>
+                            <h4 data-i18n="card.specs">产品规格</h4>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.model">型号</span><span class="spec-value">CTD-02</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg1">单包装</span><span class="spec-value" data-i18n="spec.1set">1套/袋</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg2">盒包装</span><span class="spec-value" data-i18n="spec.1pack">1袋/盒</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.life">有效期</span><span class="spec-value" data-i18n="spec.3y">3年</span></div>
                         </div>
-                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary" data-i18n="card.inquiry" data-inquiry="4">了解详情 →</a>
                     </div>
                 </div>
 
-                <div class="product-card" data-category="surgical">
-                    <div class="product-image" onclick="openModal(this, '', '一次性使用负压吸附角膜环钻（受体）')">
+                <div class="product-card" data-category="surgical"
+                    data-image="images/product-CTR-02-corneal-trephine-recipient.jpg" data-icon="🔧"
+                    data-model="CTR-02" data-pkg1="1套/袋" data-pkg1-en="1 set/pack" data-pkg2="1袋/盒" data-pkg2-en="1 pack/box" data-life="3年" data-life-en="3 years" data-license="粤食药监械生产许20214419号" data-license-en="粤食药监械生产许20214419号"
+                    data-clinic1="穿透角膜移植" data-clinic1-en="Penetrating Keratoplasty" data-clinic1-desc="PKP手术中受眼角膜受体床的标准化环形切除，边缘整齐、垂直。" data-clinic1-desc-en="Standardized circular excision of the recipient corneal bed in PKP surgery; clean, vertical edges."
+                    data-clinic2="内皮移植术" data-clinic2-en="Endothelial Keratoplasty" data-clinic2-desc="DMEK/DSEK等角膜内皮移植手术中受床制备步骤。" data-clinic2-desc-en="Recipient bed preparation in DMEK/DSEK and other endothelial keratoplasty procedures."
+                    data-cert="粤械注准20212160713" data-cert-en="粤械注准20212160713">
+                    <div class="product-image" data-open-product="5">
                         🔧
-                        <span class="zoom-hint">点击放大</span>
+                        <span class="zoom-hint" data-i18n="card.zoom">点击查看详情</span>
                     </div>
                     <div class="product-info">
-                        <h3>一次性使用负压吸引角膜环钻（受体）</h3>
+                        <h3 data-i18n="p6.name">一次性使用负压吸引角膜环钻（受体）</h3>
                         <p class="subtitle">Disposable Negative Pressure Corneal Trephine (Recipient)</p>
-                        <p class="description">用于角膜移植手术中受体角膜组织的精准切割。采用负压吸附固定，切割边缘整齐，提高手术精确度。</p>
+                        <p class="description" data-i18n="p6.desc">用于角膜移植手术中受体角膜组织的精准切割。采用负压吸附固定，切割边缘整齐，提高手术精确度。</p>
                         <div class="specs">
-                            <h4>产品规格</h4>
-                            <div class="spec-item"><span class="spec-label">型号</span><span class="spec-value">CTR-02</span></div>
-                            <div class="spec-item"><span class="spec-label">单包装</span><span class="spec-value">1套/袋</span></div>
-                            <div class="spec-item"><span class="spec-label">盒包装</span><span class="spec-value">1袋/盒</span></div>
-                            <div class="spec-item"><span class="spec-label">有效期</span><span class="spec-value">3年</span></div>
+                            <h4 data-i18n="card.specs">产品规格</h4>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.model">型号</span><span class="spec-value">CTR-02</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg1">单包装</span><span class="spec-value" data-i18n="spec.1set">1套/袋</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.pkg2">盒包装</span><span class="spec-value" data-i18n="spec.1pack">1袋/盒</span></div>
+                            <div class="spec-item"><span class="spec-label" data-i18n="card.life">有效期</span><span class="spec-value" data-i18n="spec.3y">3年</span></div>
                         </div>
-                        <a href="index.html#contact" class="btn btn-primary">了解详情</a>
+                        <a href="index.html#contact" class="btn btn-primary" data-i18n="card.inquiry" data-inquiry="5">了解详情 →</a>
                     </div>
                 </div>
             </div>
 
-            <a href="index.html" class="back-link">← 返回首页</a>
+            <a href="index.html" class="back-link" data-i18n="back.home">← 返回首页</a>
         </div>
     </section>
 
-    <div class="modal" id="imageModal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img id="modalImage" src="" alt="">
-        <div class="placeholder" id="modalPlaceholder" style="display:none">暂无产品图片</div>
-        <p class="modal-title" id="modalTitle"></p>
-        <p class="nav-hint">点击任意区域或按 ESC 键关闭</p>
+    <!-- ========== 产品详情 Tab 弹窗 ========== -->
+    <div class="product-modal" id="productModal">
+        <div class="pm-close" id="pClose">&times;</div>
+        <div class="p-card">
+            <div class="p-header">
+                <div class="p-name" id="pName">产品名称</div>
+                <div class="p-subname" id="pSubname">Product Subname</div>
+            </div>
+            <div class="p-tabs">
+                <button class="p-tab active" data-tab="photo" data-i18n="pm.tab.photo">📷 产品图</button>
+                <button class="p-tab" data-tab="spec" data-i18n="pm.tab.spec">📋 技术参数</button>
+                <button class="p-tab" data-tab="doc" data-i18n="pm.tab.doc">📁 说明书</button>
+                <button class="p-tab" data-tab="clinic" data-i18n="pm.tab.clinic">🏥 临床应用</button>
+            </div>
+            <div class="p-tab-content">
+                <div class="p-tab-panel active" data-panel="photo">
+                    <div class="p-photo" id="pPhoto">🧵
+                        <div class="no-photo" id="pNoPhoto" style="display:none">
+                            <span id="pPhotoEmoji">🧵</span>
+                            <span data-i18n-html="pm.nophoto">暂无高清实物图<br>点击右下方按钮获取产品资料</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-tab-panel" data-panel="spec">
+                    <table class="p-specs-table">
+                        <tbody>
+                            <tr><th data-i18n="pm.sp.model">产品型号</th><td id="pSpec1">HR-A</td></tr>
+                            <tr><th data-i18n="pm.sp.pkg1">单包装规格</th><td id="pSpec2">1条/袋</td></tr>
+                            <tr><th data-i18n="pm.sp.pkg2">盒包装规格</th><td id="pSpec3">10袋/盒</td></tr>
+                            <tr><th data-i18n="pm.sp.life">有效期</th><td id="pSpec4">2年</td></tr>
+                            <tr><th data-i18n="pm.sp.sterile">灭菌方式</th><td data-i18n="pm.sp.sterile.v">环氧乙烷灭菌（EO）</td></tr>
+                            <tr><th data-i18n="pm.sp.scope">适用范围</th><td data-i18n="pm.sp.scope.v">临床眼科检查 / 眼科手术辅助</td></tr>
+                            <tr><th data-i18n="pm.sp.cert">注册证号</th><td id="pSpec5">-</td></tr>
+                            <tr><th data-i18n="pm.sp.license">生产许可证号</th><td id="pSpec6">-</td></tr>
+                            <tr><th data-i18n="pm.sp.standard">生产标准</th><td data-i18n="pm.sp.standard.v">符合 GB/T 16886 / YY 0033 医疗器械标准</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-tab-panel" data-panel="doc">
+                    <div class="p-desc" id="pDocDesc" data-i18n="pm.doc.desc">
+                        本产品全套技术文档包含注册证、技术要求、检验报告、使用说明书等资料，如需完整版文档请联系销售人员。以下为可下载的资料列表：
+                    </div>
+                    <div class="p-dl-list">
+                        <a class="p-dl-item" href="javascript:void(0)" onclick="showToast(t('pm.doc.contact'), 'info', 2500);">
+                            <span class="dl-icon">📄</span>
+                            <div>
+                                <h5 data-i18n="pm.doc.manual">产品使用说明书</h5>
+                                <p data-i18n="pm.doc.manual.m">PDF · 2.4MB · 中文 / English</p>
+                            </div>
+                        </a>
+                        <a class="p-dl-item" href="javascript:void(0)" onclick="showToast(t('pm.doc.contact'), 'info', 2500);">
+                            <span class="dl-icon">📋</span>
+                            <div>
+                                <h5 data-i18n="pm.doc.regcert">医疗器械注册证</h5>
+                                <p data-i18n="pm.doc.regcert.m">PDF · 860KB · NMPA批准</p>
+                            </div>
+                        </a>
+                        <a class="p-dl-item" href="javascript:void(0)" onclick="showToast(t('pm.doc.contact'), 'info', 2500);">
+                            <span class="dl-icon"></span>
+                            <div>
+                                <h5 data-i18n="pm.doc.lit">临床文献汇总</h5>
+                                <p data-i18n="pm.doc.lit.m">PDF · 3.1MB · SCI / 核心期刊研究</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="p-tab-panel" data-panel="clinic">
+                    <div class="p-clinic">
+                        <div class="p-clinic-item">
+                            <div class="ci-label" id="pClinic1Lbl" data-i18n="pm.clinic1">临床应用场景一</div>
+                            <div class="ci-content" id="pClinic1Desc">临床应用场景描述内容</div>
+                        </div>
+                        <div class="p-clinic-item">
+                            <div class="ci-label" id="pClinic2Lbl" data-i18n="pm.clinic2">临床应用场景二</div>
+                            <div class="ci-content" id="pClinic2Desc">临床应用场景描述内容</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-footer">
+                <div class="pf-left" data-i18n-html="pm.stock">
+                    <span class="dot">●</span> 现货供应 · 全国顺丰包邮
+                </div>
+                <a class="inquiry-btn" id="pInquiryBtn" href="index.html#contact" data-i18n="pm.inquiry">
+                    📞 立即询价此产品
+                </a>
+            </div>
+        </div>
     </div>
 
     <footer>
@@ -443,73 +564,42 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <div class="brand">汇睿生物 | HuiRayMed</div>
-                    <p>专业眼科医疗器械研发、生产与销售</p>
-                    <p class="contact-info">电话：18000780071 | 邮箱：1787360775@qq.com</p>
+                    <p data-i18n="footer.desc">专业眼科医疗器械研发、生产与销售</p>
+                    <p class="contact-info" data-i18n="footer.contact">电话：18000780071 | 邮箱：1787360775@qq.com</p>
                 </div>
                 <div class="footer-links">
-                    <h4>产品中心</h4>
+                    <h4 data-i18n="footer.p.t">产品中心</h4>
                     <ul>
-                        <li><a href="products.html">眼科诊断设备</a></li>
-                        <li><a href="products.html">眼科手术器械</a></li>
-                        <li><a href="products.html">眼科耗材</a></li>
-                        <li><a href="products.html">眼科诊断试剂</a></li>
+                        <li><a href="products.html" data-i18n="footer.p.diag">眼科诊断设备</a></li>
+                        <li><a href="products.html" data-i18n="footer.p.surg">眼科手术器械</a></li>
+                        <li><a href="products.html" data-i18n="footer.p.cons">眼科耗材</a></li>
+                        <li><a href="products.html" data-i18n="footer.p.reag">眼科诊断试剂</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>关于我们</h4>
+                    <h4 data-i18n="footer.a.t">关于我们</h4>
                     <ul>
-                        <li><a href="index.html#about">公司简介</a></li>
-                        <li><a href="index.html#why">核心优势</a></li>
-                        <li><a href="index.html#contact">联系我们</a></li>
+                        <li><a href="index.html#about" data-i18n="footer.a.comp">公司简介</a></li>
+                        <li><a href="index.html#why" data-i18n="footer.a.adv">核心优势</a></li>
+                        <li><a href="index.html#contact" data-i18n="footer.a.cont">联系我们</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4>服务支持</h4>
+                    <h4 data-i18n="footer.s.t">服务支持</h4>
                     <ul>
-                        <li><a href="index.html#contact">售后服务</a></li>
-                        <li><a href="index.html#contact">技术支持</a></li>
-                        <li><a href="index.html#contact">采购咨询</a></li>
+                        <li><a href="index.html#contact" data-i18n="footer.s.after">售后服务</a></li>
+                        <li><a href="index.html#contact" data-i18n="footer.s.tech">技术支持</a></li>
+                        <li><a href="index.html#contact" data-i18n="footer.s.purch">采购咨询</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="copy">&copy; 2025 深圳前海汇睿生物技术有限公司 版权所有 | 专注眼科医疗 守护清晰视界</p>
-                <p class="address">地址：深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区11号楼11层</p>
+                <p class="copy" data-i18n="footer.copy">&copy; 2025 深圳前海汇睿生物技术有限公司 版权所有 | 专注眼科医疗 守护清晰视界</p>
+                <p class="address" data-i18n="footer.addr">地址：深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区11号楼11层</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-        window.openModal = function(element, imageSrc, title) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const modalPlaceholder = document.getElementById('modalPlaceholder');
-            const modalTitle = document.getElementById('modalTitle');
-
-            if (!modal || !modalImg || !modalPlaceholder || !modalTitle) return;
-
-            if (imageSrc && imageSrc.trim()) {
-                modalImg.src = imageSrc;
-                modalImg.alt = title || '';
-                modalImg.style.display = 'block';
-                modalPlaceholder.style.display = 'none';
-            } else {
-                modalImg.src = '';
-                modalImg.style.display = 'none';
-                modalPlaceholder.style.display = 'block';
-            }
-            modalTitle.textContent = title || '';
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        };
-
-        window.closeModal = function() {
-            const modal = document.getElementById('imageModal');
-            if (!modal) return;
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        };
-    </script>
+    <script src="script.js?v=p10"></script>
 </body>
 </html>

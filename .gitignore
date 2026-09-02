@@ -1,0 +1,9 @@
+# 本地设计源文件（不提交 git / 不参与部署）
+_sources/
+
+# 图片原始备份（网站仅引用压缩后版本）
+images/_originals/
+
+# 系统杂项
+Thumbs.db
+Desktop.ini
