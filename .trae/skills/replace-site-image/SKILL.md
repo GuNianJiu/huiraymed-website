@@ -71,6 +71,14 @@ $bmp.Save($dst,$enc,$ep); $bmp.Dispose(); $img.Dispose()
 - 用 `Invoke-WebRequest` 验证：图片 HTTP 200 且体积正确；HTML 中新引用计数符合预期、旧内容计数为 0
 - PowerShell 终端会有 profile 加载红字报错（ExecutionPolicy），属噪音可忽略；命令本身的输出才有效
 
+## 证件/资质类图片：必须加水印
+
+证书扫描件（营业执照、生产许可证、注册证 PDF）属带红章敏感文件，上传前必须加平铺防伪水印「仅供核验 · huiraymed.com · 再次复印无效」（斜向 -28°、半透明红色 alpha≈36、不遮挡关键字段）。
+
+- **JPG**：System.Drawing 逐图平铺 DrawString（RotateTransform -28，奇数行错位半格）。注意：PowerShell 5.1 按 GBK 解析无 BOM 的 .ps1，中文必须用 Unicode 码位构造字符串（如 `[char]0x4EC5` = 仅），直接写中文会画出乱码。改完先 Read 图片确认水印文字正常再交付。
+- **PDF**：`pip install pymupdf`（沙箱 pycache 报错是噪音，import 成功即可）；`page.insert_text(..., fontname="china-s", color=(0.75,0.15,0.15), fill_opacity=0.13, morph=(pivot, Matrix(1,1).prerotate(-28)))` 逐页平铺，save 时 `garbage=4, deflate=True`。
+- 无水印原件备份到 `images/_originals/`（gitignored），文件名加 `-nowm` 后缀；替换后给证书 URL 加 `?v=pN` 参数破缓存（data-image 和 img src 都加，PDF 的 isPdf 正则兼容 `?` 查询串）。
+
 ## 易踩坑清单
 
 - 剪贴板取图后不看内容直接用 → 用过错误截图（曾取到网站截图而非地图）
