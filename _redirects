@@ -1,0 +1,7 @@
+# Cloudflare Pages redirects
+# Force HTTPS is handled automatically by Cloudflare Pages.
+# Strip www: redirect www subdomain to apex domain.
+# Cloudflare Pages _redirects uses path-based matching; apex redirect handled via project settings.
+# Place page-level redirects below.
+
+# Trailing slash normalization for HTML pages (optional, keeps links clean)

@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     initI18n();
     initMobileNav();
-    initModal();
     initCategoryFilter();
     initSearch();
     initContactForm();
@@ -49,12 +48,12 @@ const I18N_DICT = {
         'contact.form.title': '在线留言',
         'contact.form.name': '您的姓名', 'contact.form.phone': '联系电话', 'contact.form.email': '电子邮箱', 'contact.form.company': '公司名称', 'contact.form.msg': '留言内容',
         'contact.form.submit': '提交留言', 'contact.form.tip': '💡 提交后请在邮件客户端中点击"发送"完成留言',
-        'contact.map.link': '📍 点击查看地图', 'contact.map.addr': '深圳市坪山区坑梓街道金沙社区金辉路14号<br>生物医药创新产业园区',
+        'contact.map.link': '📍 点击查看地图', 'contact.map.addr': '深圳市坪山区坑梓街道金沙社区金辉路14号<br>生物医药创新产业园区', 'contact.map.alt': '公司位置地图（高德地图）',
         'footer.desc': '专业眼科医疗器械研发、生产与销售', 'footer.contact': '电话：18000780071 | 邮箱：1787360775@qq.com',
         'footer.p.t': '产品中心', 'footer.p.diag': '眼科诊断设备', 'footer.p.surg': '眼科手术器械', 'footer.p.cons': '眼科耗材', 'footer.p.reag': '眼科诊断试剂',
         'footer.a.t': '关于我们', 'footer.a.comp': '公司简介', 'footer.a.adv': '核心优势', 'footer.a.cont': '联系我们',
         'footer.s.t': '服务支持', 'footer.s.after': '售后服务', 'footer.s.tech': '技术支持', 'footer.s.purch': '采购咨询',
-        'footer.copy': '© 2025 深圳前海汇睿生物技术有限公司 版权所有 | 专注眼科医疗 守护清晰视界',
+        'footer.copy': '© 2026 深圳前海汇睿生物技术有限公司 版权所有 | 专注眼科医疗 守护清晰视界',
         'footer.addr': '地址：深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区11号楼11层',
         'cat.all': '全部产品', 'cat.cons': '眼科耗材', 'cat.surg': '手术器械',
         'search.ph': '搜索产品名称、型号...',
@@ -127,10 +126,10 @@ const I18N_DICT = {
         'footer.p.t': 'Products', 'footer.p.diag': 'Diagnostic Devices', 'footer.p.surg': 'Surgical Instruments', 'footer.p.cons': 'Consumables', 'footer.p.reag': 'Diagnostic Reagents',
         'footer.a.t': 'About Us', 'footer.a.comp': 'Company Profile', 'footer.a.adv': 'Core Advantages', 'footer.a.cont': 'Contact Us',
         'footer.s.t': 'Support', 'footer.s.after': 'After-Sales Service', 'footer.s.tech': 'Technical Support', 'footer.s.purch': 'Purchase Consultation',
-        'footer.copy': '© 2025 Shenzhen Qianhai HuiRay Biotechnology Co., Ltd. All Rights Reserved | Dedicated to Ophthalmology, Guarding Clear Vision',
+        'footer.copy': '© 2026 Shenzhen Qianhai HuiRay Biotechnology Co., Ltd. All Rights Reserved | Dedicated to Ophthalmology, Guarding Clear Vision',
         'footer.addr': 'Address: 11th Floor, Building 11, Shenzhen Biomedical Innovation Industrial Park, No. 14 Jinhui Road, Jinsha Community, Kengzi Street, Pingshan District, Shenzhen',
         'cat.all': 'All Products', 'cat.cons': 'Ophthalmic Consumables', 'cat.surg': 'Surgical Instruments',
-        'search.ph': 'Search product name, model...',
+        'search.ph': 'Search product name, model...', 'search.empty': 'No matching products found. Please try another keyword.',
         'card.zoom': 'Click for details', 'card.specs': 'Product Specs', 'card.model': 'Model', 'card.pkg1': 'Unit Pack', 'card.pkg2': 'Box Pack', 'card.life': 'Shelf Life',
         'card.inquiry': 'Learn More →', 'back.home': '← Back to Home',
         'spec.1strip': '1 strip/pack', 'spec.2strip': '2 strips/pack', 'spec.1set': '1 set/pack', 'spec.10pack': '10 packs/box', 'spec.1pack': '1 pack/box', 'spec.2y': '2 years', 'spec.3y': '3 years',
@@ -389,56 +388,19 @@ function initMobileNav() {
     }
 }
 
-/* ========= 旧图片弹窗（兼容） ========= */
-function initModal() {
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const modalTitle = document.getElementById('modalTitle');
-
-    window.openModal = function(element, imageSrc, title) {
-        if (!modal || !modalImg || !modalTitle) return;
-
-        if (imageSrc) {
-            modalImg.src = imageSrc;
-            modalImg.alt = title || '';
-            modalImg.style.display = 'block';
-        } else {
-            modalImg.src = '';
-            modalImg.style.display = 'none';
-        }
-        modalTitle.textContent = title || '';
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    };
-
-    window.closeModal = function() {
-        if (!modal) return;
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    };
-
-    if (modal) {
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) closeModal();
-        });
-    }
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') closeModal();
-    });
-}
-
 /* ========= 搜索与分类筛选 ========= */
 function filterProducts() {
     const searchInput = document.getElementById('searchInput');
     const products = document.querySelectorAll('.product-card');
     const activeTab = document.querySelector('.category-tabs .tab.active');
+    const noResults = document.getElementById('noResults');
 
     if (products.length === 0) return;
 
     const searchQuery = searchInput?.value.toLowerCase() || '';
     const category = activeTab?.getAttribute('data-category') || 'all';
 
+    let visibleCount = 0;
     products.forEach(function(product) {
         const productCategory = product.getAttribute('data-category');
         const productName = product.querySelector('h3')?.textContent.toLowerCase() || '';
@@ -459,10 +421,15 @@ function filterProducts() {
 
         if (matchCategory && matchSearch) {
             product.style.display = '';
+            visibleCount++;
         } else {
             product.style.display = 'none';
         }
     });
+
+    if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
 }
 
 function initCategoryFilter() {
@@ -470,6 +437,18 @@ function initCategoryFilter() {
     const products = document.querySelectorAll('.product-card');
 
     if (tabs.length === 0 || products.length === 0) return;
+
+    /* 支持 ?cat=consumables|surgical 自动激活对应分类 */
+    const params = new URLSearchParams(window.location.search);
+    const targetCat = params.get('cat');
+    if (targetCat) {
+        const targetTab = document.querySelector('.category-tabs .tab[data-category="' + targetCat + '"]');
+        if (targetTab) {
+            tabs.forEach(function(t) { t.classList.remove('active'); });
+            targetTab.classList.add('active');
+            filterProducts();
+        }
+    }
 
     tabs.forEach(function(tab) {
         tab.addEventListener('click', function() {
