@@ -51,7 +51,7 @@
     }
     </script>
     
-    <link rel="stylesheet" href="style.css?v=p11">
+    <link rel="stylesheet" href="style.css?v=p12">
 </head>
 <body>
 <header>
@@ -300,19 +300,24 @@
     <div class="chat-body">
         <form id="contactForm" action="mailto:1787360775@qq.com" method="post" enctype="text/plain">
             <div class="form-group">
-                <input type="text" name="name" placeholder="您的姓名" data-i18n-attr="placeholder:contact.form.name" required>
+                <label for="formName" class="sr-only" data-i18n="contact.form.name">您的姓名</label>
+                <input type="text" id="formName" name="name" placeholder="您的姓名" data-i18n-attr="placeholder:contact.form.name" required>
             </div>
             <div class="form-group">
-                <input type="tel" name="phone" placeholder="联系电话" data-i18n-attr="placeholder:contact.form.phone" required>
+                <label for="formPhone" class="sr-only" data-i18n="contact.form.phone">联系电话</label>
+                <input type="tel" id="formPhone" name="phone" placeholder="联系电话" data-i18n-attr="placeholder:contact.form.phone" required>
             </div>
             <div class="form-group">
-                <input type="email" name="email" placeholder="电子邮箱" data-i18n-attr="placeholder:contact.form.email">
+                <label for="formEmail" class="sr-only" data-i18n="contact.form.email">电子邮箱</label>
+                <input type="email" id="formEmail" name="email" placeholder="电子邮箱" data-i18n-attr="placeholder:contact.form.email">
             </div>
             <div class="form-group">
-                <input type="text" name="company" placeholder="公司名称" data-i18n-attr="placeholder:contact.form.company">
+                <label for="formCompany" class="sr-only" data-i18n="contact.form.company">公司名称</label>
+                <input type="text" id="formCompany" name="company" placeholder="公司名称" data-i18n-attr="placeholder:contact.form.company">
             </div>
             <div class="form-group">
-                <textarea name="message" placeholder="留言内容" data-i18n-attr="placeholder:contact.form.msg" rows="4" required></textarea>
+                <label for="formMessage" class="sr-only" data-i18n="contact.form.msg">留言内容</label>
+                <textarea id="formMessage" name="message" placeholder="留言内容" data-i18n-attr="placeholder:contact.form.msg" rows="4" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary" data-i18n="contact.form.submit">提交留言</button>
         </form>
@@ -322,6 +327,6 @@
     </div>
 </div>
 
-<script src="script.js?v=p14"></script>
+<script src="script.js?v=p15"></script>
 </body>
 </html>

@@ -161,7 +161,9 @@ const I18N_DICT = {
     }
 };
 
-let currentLang = localStorage.getItem('lang') || 'zh';
+let currentLang;
+try { currentLang = localStorage.getItem('lang') || 'zh'; }
+catch (e) { currentLang = 'zh'; }
 
 function t(key) {
     const dict = I18N_DICT[currentLang] || I18N_DICT.zh;
