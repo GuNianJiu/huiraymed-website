@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /private/
 
-Sitemap: https://www.huiraymed.com/sitemap.xml
+Sitemap: https://huiraymed.com/sitemap.xml
