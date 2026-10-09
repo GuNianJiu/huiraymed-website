@@ -642,33 +642,16 @@ section {
 .contact-map {
     border-radius: var(--radius-lg);
     overflow: hidden;
-    cursor: pointer;
     box-shadow: var(--shadow-sm);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 260px;
+    aspect-ratio: 4 / 3;
 }
 
-.contact-map:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-md);
-}
-
-.contact-map a {
+.contact-map iframe {
     display: block;
     width: 100%;
     height: 100%;
-    text-decoration: none;
-}
-
-.contact-map img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.contact-map-link {
-    text-decoration: none;
-    color: inherit;
+    border: 0;
 }
 
 footer {
