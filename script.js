@@ -172,7 +172,7 @@ function t(key) {
 
 function applyLang(lang) {
     currentLang = lang;
-    localStorage.setItem('lang', lang);
+    try { localStorage.setItem('lang', lang); } catch (e) {}
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
         el.textContent = t(el.getAttribute('data-i18n'));
@@ -652,11 +652,17 @@ function initProductDetailModal() {
                     photoEl.appendChild(existingImg);
                     if (noPhotoEl) photoEl.appendChild(noPhotoEl);
                 }
-                existingImg.src = image;
                 existingImg.alt = h3 ? h3.textContent : '';
                 existingImg.style.display = 'block';
                 if (noPhotoEl) noPhotoEl.style.display = 'none';
                 photoEl.style.fontSize = 'inherit';
+                existingImg.onerror = function() {
+                    existingImg.style.display = 'none';
+                    if (photoEmojiEl) photoEmojiEl.textContent = icon;
+                    if (noPhotoEl) noPhotoEl.style.display = 'block';
+                    photoEl.style.fontSize = '';
+                };
+                existingImg.src = image;
             } else {
                 if (existingImg) existingImg.style.display = 'none';
                 if (photoEmojiEl) photoEmojiEl.textContent = icon;
