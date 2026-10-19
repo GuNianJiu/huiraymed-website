@@ -51,7 +51,7 @@
     }
     </script>
     
-    <link rel="stylesheet" href="style.css?v=p14">
+    <link rel="stylesheet" href="style.css?v=p15">
 </head>
 <body>
 <header>
@@ -181,10 +181,10 @@
 </section>
 
 <!-- 证书大图预览弹窗 -->
-<div class="preview-modal" id="certModal">
-    <span class="pm-close" id="certClose">&times;</span>
-    <div class="pm-nav pm-prev" id="certPrev">‹</div>
-    <div class="pm-nav pm-next" id="certNext">›</div>
+<div class="preview-modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certTitle">
+    <button type="button" class="pm-close" id="certClose" aria-label="关闭" data-i18n-attr="aria-label:chat.close">&times;</button>
+    <button type="button" class="pm-nav pm-prev" id="certPrev" aria-label="上一张" data-i18n-attr="aria-label:cm.prev">‹</button>
+    <button type="button" class="pm-nav pm-next" id="certNext" aria-label="下一张" data-i18n-attr="aria-label:cm.next">›</button>
     <div class="pm-content">
         <div class="pm-title" id="certTitle" data-i18n="cm.title">资质证书预览</div>
         <div class="pm-image-wrap">
@@ -325,6 +325,6 @@
     </div>
 </div>
 
-<script src="script.js?v=p16"></script>
+<script src="script.js?v=p17"></script>
 </body>
 </html>

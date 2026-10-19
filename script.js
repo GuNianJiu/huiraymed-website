@@ -37,7 +37,7 @@ const I18N_DICT = {
         'qual.c1.ph': '营业执照', 'qual.c1.t': '企业营业执照', 'qual.c1.no': '统一社会信用代码：91440300342737280L', 'qual.c1.alt': '营业执照扫描件',
         'qual.c2.ph': '生产许可证', 'qual.c2.t': '医疗器械生产许可证', 'qual.c2.no': '生产类别：Ⅱ类16眼科器械', 'qual.c2.alt': '医疗器械生产许可证扫描件',
         'qual.c3.ph': '产品注册证', 'qual.c3.t': '产品注册证（泪液检测酚红棉线）', 'qual.c3.no': 'NMPA 国家药监局批准上市',
-        'cm.title': '资质证书预览', 'cm.noimg': '暂无高清扫描件', 'cm.contact': '请联系我们获取完整电子版资质文件', 'cm.phone': '📞 180-0078-0071 周经理',
+        'cm.title': '资质证书预览', 'cm.noimg': '暂无高清扫描件', 'cm.contact': '请联系我们获取完整电子版资质文件', 'cm.phone': '📞 180-0078-0071 周经理', 'cm.prev': '上一张', 'cm.next': '下一张',
         'contact.title': '联系我们', 'contact.subtitle': '期待与您的合作', 'contact.info': '联系方式',
         'contact.person.val': '周源辉', 'contact.production.lbl': '生产负责人',
         'contact.company.lbl': '公司电话', 'contact.sales.lbl': '销售团队',
@@ -56,7 +56,7 @@ const I18N_DICT = {
         'footer.copy': '© 2026 深圳前海汇睿生物技术有限公司 版权所有 | 专注眼科医疗 守护清晰视界',
         'footer.addr': '地址：深圳市坪山区坑梓街道金沙社区金辉路14号生物医药创新产业园区11号楼11层',
         'cat.all': '全部产品', 'cat.cons': '眼科耗材', 'cat.surg': '手术器械',
-        'search.ph': '搜索产品名称、型号...',
+        'search.ph': '搜索产品名称、型号...', 'search.empty': '未找到匹配的产品，请尝试其他关键词。',
         'card.zoom': '点击查看详情', 'card.specs': '产品规格', 'card.model': '型号', 'card.pkg1': '单包装', 'card.pkg2': '盒包装', 'card.life': '有效期',
         'card.inquiry': '了解详情 →', 'back.home': '← 返回首页',
         'spec.1strip': '1条/袋', 'spec.2strip': '2条/袋', 'spec.1set': '1套/袋', 'spec.10pack': '10袋/盒', 'spec.1pack': '1袋/盒', 'spec.2y': '2年', 'spec.3y': '3年',
@@ -110,7 +110,7 @@ const I18N_DICT = {
         'qual.c1.ph': 'Business License', 'qual.c1.t': 'Business License', 'qual.c1.no': 'Unified Social Credit Code: 91440300342737280L', 'qual.c1.alt': 'Scanned business license',
         'qual.c2.ph': 'Production License', 'qual.c2.t': 'Medical Device Production License', 'qual.c2.no': 'Category: Class II-16 Ophthalmic Devices', 'qual.c2.alt': 'Scanned medical device production license',
         'qual.c3.ph': 'Product Registration', 'qual.c3.t': 'Product Registration Certificate (Phenol Red Thread for Lacrimal Detection)', 'qual.c3.no': 'NMPA Approved for Market',
-        'cm.title': 'Qualification Certificate Preview', 'cm.noimg': 'No HD scan available', 'cm.contact': 'Please contact us for the full digital qualification documents', 'cm.phone': '📞 180-0078-0071 Mr. Zhou',
+        'cm.title': 'Qualification Certificate Preview', 'cm.noimg': 'No HD scan available', 'cm.contact': 'Please contact us for the full digital qualification documents', 'cm.phone': '📞 180-0078-0071 Mr. Zhou', 'cm.prev': 'Previous', 'cm.next': 'Next',
         'contact.title': 'Contact Us', 'contact.subtitle': 'Looking Forward to Our Cooperation', 'contact.info': 'Contact Information',
         'contact.person.val': 'Zhou Yuanhui', 'contact.production.lbl': 'Production Manager',
         'contact.company.lbl': 'Company Phone', 'contact.sales.lbl': 'Sales Team',
@@ -499,6 +499,7 @@ function initQualificationViewer() {
     const counterEl = document.getElementById('certCounter');
 
     let current = 0;
+    let lastFocused = null;
     const total = cards.length;
     const isPdf = (url) => /\.pdf(\?|#|$)/i.test((url || '').trim());
 
@@ -543,9 +544,11 @@ function initQualificationViewer() {
     }
 
     function openModal(idx) {
+        lastFocused = document.activeElement;
         render(idx);
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        if (closeBtn) closeBtn.focus();
     }
 
     function closeModal() {
@@ -554,6 +557,7 @@ function initQualificationViewer() {
         if (iframeEl) {
             setTimeout(function() { iframeEl.src = ''; }, 200);
         }
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
     }
 
     cards.forEach(function(card, i) {
@@ -627,6 +631,7 @@ function initProductDetailModal() {
     const c2Desc = document.getElementById('pClinic2Desc');
 
     let openedIndex = -1;
+    let lastFocused = null;
 
     function fillData(index) {
         const card = cards[index];
@@ -701,15 +706,18 @@ function initProductDetailModal() {
     }
 
     function openModal(index) {
+        lastFocused = document.activeElement;
         fillData(index);
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
         setTimeout(function() { modal.scrollTop = 0; }, 30);
+        if (closeBtn) closeBtn.focus();
     }
 
     function closeModal() {
         modal.classList.remove('active');
         document.body.style.overflow = '';
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
     }
 
     openTriggers.forEach(function(el) {
